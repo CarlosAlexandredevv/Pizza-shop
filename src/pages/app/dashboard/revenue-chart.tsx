@@ -1,4 +1,5 @@
 import {
+    CartesianGrid,
     Line,
     LineChart,
     ResponsiveContainer,
@@ -7,7 +8,7 @@ import {
   } from 'recharts'
   
   import colors from 'tailwindcss/colors'
-  
+
   import {
     Card,
     CardContent,
@@ -52,12 +53,16 @@ import {
                   })
                 }
               />
+              
+              <CartesianGrid vertical={false} className='stroke-muted'/>
+
               <Line
                 stroke={colors.violet[500]}
                 type="linear"
                 strokeWidth={2}
                 dataKey="revenue"
               />
+
             </LineChart>
           </ResponsiveContainer>
         </CardContent>
