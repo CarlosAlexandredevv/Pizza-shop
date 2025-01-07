@@ -1,6 +1,8 @@
 import { Home, Pizza, UtensilsCrossed } from 'lucide-react'
 import { NavLink } from './nav-link.tsx'
 import { Separator } from './ui/separator'
+import { ThemeToggle } from './theme/theme-toggle.tsx'
+import { AccountMenu } from './account-menu.tsx'
 export function Header() {
   return (
     <div className="border-b">
@@ -21,6 +23,11 @@ export function Header() {
             Pedidos
           </NavLink>
         </nav>
+
+        <div className='ml-auto flex items-center gap-2 '>
+          <ThemeToggle />
+          <AccountMenu/>
+        </div>
 
       </div>
     </div>
