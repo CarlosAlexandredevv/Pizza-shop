@@ -16,7 +16,6 @@ export function App() {
       <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
       </QueryClientProvider>
-   
       </ThemeProvider>
     </HelmetProvider>
   )
