@@ -5,7 +5,8 @@ import { useQuery } from "@tanstack/react-query";
 import { getProfile } from "@/api/get-profile";
 import { getManagedRestaurant } from "@/api/get-managed-restaurant";
 import { Skeleton } from "./ui/skeleton";
-
+import { Dialog, DialogTrigger } from "./ui/dialog";
+import { StoreProfileDialog } from "./store-profile-dialog";
 
 
 export function AccountMenu() {
@@ -20,6 +21,7 @@ export function AccountMenu() {
   })
 
   return (
+    <Dialog>
     <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" className="flex items-center gap-2 select-none">
@@ -45,18 +47,22 @@ export function AccountMenu() {
                 )}
             </DropdownMenuLabel>
             <DropdownMenuSeparator/>
-
-            <DropdownMenuItem>
-                <Building className="size-4 mr-2"/>
-                <span>Perfil da loja</span>
-            </DropdownMenuItem>
+            <DialogTrigger asChild>
+              <DropdownMenuItem>
+                  <Building className="size-4 mr-2"/>
+                  <span>Perfil da loja</span>
+              </DropdownMenuItem>
+              
+            </DialogTrigger>
 
             <DropdownMenuItem className="text-rose-500 dark:text-rose-400">
                 <LogOut className="size-4 mr-2"/>
                 <span>Sair</span>
             </DropdownMenuItem>
-
         </DropdownMenuContent>
     </DropdownMenu>
+
+    <StoreProfileDialog/>
+  </Dialog>
   );
 }
