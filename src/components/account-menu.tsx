@@ -54,7 +54,7 @@ export function AccountMenu() {
                 ):(
                   <>
                     <span>{profile?.name}</span>
-                    <span className="text-xs font-normal text-muted-foreground">carlos@gmail.com</span>
+                    <span className="text-xs font-normal text-muted-foreground">{profile?.email}</span>
                   </>
                 )}
             </DropdownMenuLabel>
