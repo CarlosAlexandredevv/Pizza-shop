@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { subDays } from 'date-fns'
 import { Loader2 } from 'lucide-react'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { DateRange } from 'react-day-picker'
 import {
   CartesianGrid,
@@ -21,7 +21,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { DateRangePicker } from '../../../components/ui/date-ranger-picker'
+import { DateRangePicker } from '@/components/ui/date-range-picker'
 import { Label } from '@/components/ui/label'
 
 export function RevenueChart() {
@@ -38,8 +38,6 @@ export function RevenueChart() {
         to: dateRange?.to,
       }),
   })
-
-
 
   const chartData = useMemo(() => {
     return dailyRevenueInPeriod?.map((chartItem) => {

@@ -1,10 +1,9 @@
-import { api } from "@/lib/axios";
-import { CancelOrderParams } from "./cancel-order";
+import { api } from '@/lib/axios'
 
-export interface DeliverOrderParams{
-    orderId: string;
+export interface DeliverOrderParams {
+  orderId: string
 }
 
-export async function deliverOrder({orderId}: CancelOrderParams){
-    await api.patch(`/orders/${orderId}/deliver`);
+export async function deliverOrder({ orderId }: DeliverOrderParams) {
+  await api.patch(`/orders/${orderId}/deliver`)
 }
